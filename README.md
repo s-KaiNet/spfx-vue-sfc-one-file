@@ -1,6 +1,6 @@
 # spfx-vue-sfc-one-file
 This sample demonstrates how to use SPFx web part with Vue.js and single file components without splitting code and styles between separate files. This approach uses common Vue "all-in-one" style.   
-This sample is more like POC and has some drawbacks\issues, which might adressed in the future. For now I still think safer approach is using separate `.ts` and `.css` (`.scss` or whatever) files when building SPFx web parts with Vue, like demonstarted [here](https://github.com/SharePoint/sp-dev-fx-webparts/tree/master/samples/vuejs-todo-single-file-component)  
+This sample is more like POC and has some drawbacks\issues, which might be addressed in the future. For now I still think safer approach is using separate `.ts` and `.css` (`.scss` or whatever) files when building SPFx web parts with Vue, like demonstrated [here](https://github.com/SharePoint/sp-dev-fx-webparts/tree/master/samples/vuejs-todo-single-file-component)  
 
 ## Minimal path to awesome: 
 1. Clone the repo
@@ -8,8 +8,8 @@ This sample is more like POC and has some drawbacks\issues, which might adressed
 3. `gulp serve`
 
 ## Issues
- - Latests version of Typescript doesn't work (2.2.<b>2</b>). This package use 2.2.<b>0</b> which is working. The reason is that TS since 2.2.2 version included `whatwg-fetch` into the core defenitions, SPFx from the other side uses `@types/whatwg-fetch`, as a result multiple "duplicate identifier" errors. SPFx uses it's own version of TS (2.1.6 currently) and in general it's good to use the same version for you build. But, as said, 2.2.0 also works
- - build approxemetly 2-2.5x times slower in comparison to "normal" approach. Difficualt to use watchers
+ - Latests version of Typescript doesn't work (2.2.<b>2</b>). This package use 2.2.<b>0</b> which is working. The reason is that TS since 2.2.2 version included `whatwg-fetch` into the core definitions, SPFx from the other side uses `@types/whatwg-fetch`, as a result multiple "duplicate identifier" errors. SPFx uses it's own version of TS (2.1.6 currently) and in general it's good to use the same version for you build. But, as said, 2.2.0 also works
+ - build approximately 2-2.5x times slower in comparison to "normal" approach. Difficult to use watchers
  - many changes to build pipeline, SPFx's `typescript` task is disabled and replaced with webpack's `ts-loader`. May be that's not so bad, but who knows..
  - there are some issues with source maps - difficult to identify the right file with source code
  - general issues with `.vue` files - intellisense, real time type checking, etc.
