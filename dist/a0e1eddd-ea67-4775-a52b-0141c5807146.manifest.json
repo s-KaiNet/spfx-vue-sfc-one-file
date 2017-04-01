@@ -1,0 +1,57 @@
+{
+  "id": "a0e1eddd-ea67-4775-a52b-0141c5807146",
+  "alias": "ToDoWebPart",
+  "componentType": "WebPart",
+  "version": "0.0.2",
+  "manifestVersion": 2,
+  "preconfiguredEntries": [
+    {
+      "groupId": "a0e1eddd-ea67-4775-a52b-0141c5807146",
+      "group": {
+        "default": "Under Development"
+      },
+      "title": {
+        "default": "ToDo"
+      },
+      "description": {
+        "default": "My Todo&#39;s"
+      },
+      "officeFabricIconFontName": "Page",
+      "properties": {
+        "message": "todos",
+        "todos": []
+      }
+    }
+  ],
+  "loaderConfig": {
+    "entryModuleId": "to-do.bundle",
+    "internalModuleBaseUrls": [
+      "https://localhost:4321/"
+    ],
+    "scriptResources": {
+      "to-do.bundle": {
+        "type": "path",
+        "path": "dist/to-do.bundle.js"
+      },
+      "vue": {
+        "type": "path",
+        "path": "node_modules/vue/dist/vue.runtime.js"
+      },
+      "toDoStrings": {
+        "defaultPath": "lib/webparts/toDo/loc/en-us.js",
+        "type": "localizedPath",
+        "paths": {}
+      },
+      "@microsoft/sp-core-library": {
+        "type": "component",
+        "version": "1.0.0",
+        "id": "7263c7d0-1d6a-45ec-8d85-d4d1d234171b"
+      },
+      "@microsoft/sp-webpart-base": {
+        "type": "component",
+        "version": "1.0.0",
+        "id": "974a7777-0990-4136-8fa6-95d80114c2e0"
+      }
+    }
+  }
+}
