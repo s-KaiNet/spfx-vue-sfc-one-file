@@ -13,7 +13,7 @@ import { Component, Prop } from 'vue-property-decorator';
 
 @Component
 export default class TodoItem extends Vue {
-    @Prop
+    @Prop()
     public todoText: string;
 
     public onComplete(): void {
@@ -22,7 +22,7 @@ export default class TodoItem extends Vue {
 }
 </script>
 
-<style scoped lang="sass">
+<style scoped lang="scss">
 li {
     font-size: 30px;
 }

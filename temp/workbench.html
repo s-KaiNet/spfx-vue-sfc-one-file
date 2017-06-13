@@ -11,7 +11,15 @@
 
   <script type="text/javascript" src="https://localhost:4321/temp/manifests.js"></script>
   <script type="text/javascript" src="https://localhost:4321/node_modules/@microsoft/sp-loader/dist/sp-loader_en-us.js"></script>
+  <script type="text/javascript">
+    // The workbenchInit.js script is commonJS and expects an "exports" object
+    var exports = {};
+  </script>
   <script type="text/javascript" src="https://localhost:4321/node_modules/@microsoft/sp-webpart-workbench/lib/api/workbenchInit.js"></script>
+  <script type="text/javascript">
+    // Clean up the "exports" object
+    exports = undefined;
+  </script>
 </head>
 <body>
 

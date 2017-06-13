@@ -28,24 +28,31 @@ build.configureWebpack.setConfig({
                 }
             },*/
             resolve: {
-                extensions: ['', '.ts', '.js']
+                extensions: ['.ts', '.js', '.vue'],
+                alias: {
+                    'vue$': 'vue/dist/vue.runtime.esm.js'
+                }
             },
             module: {
-                loaders: [{
+                rules: [{
                     test: /\.vue$/,
-                    loader: 'vue-loader'
+                    use: [{
+                        loader: 'vue-loader',
+                        options: {
+                            esModule: true
+                        }
+                    }]
                 }, {
                     test: /\.ts$/,
-                    exclude: /node_modules|vue\/src/,
-                    loader: 'ts-loader',
-                }
-                ]
-            },
-            vue: {
-                esModule: true
-            },
-            ts: {
-                appendTsSuffixTo: [/\.vue$/]
+                    exclude: [/node_modules|vue\/src/],
+                    use: [{
+                        loader: 'ts-loader',
+                        options: {
+                            appendTsSuffixTo: [/\.vue$/]
+                        }
+                    }]
+
+                }]
             }
         };
 

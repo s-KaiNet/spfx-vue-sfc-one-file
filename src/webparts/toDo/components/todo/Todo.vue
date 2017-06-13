@@ -22,9 +22,9 @@ import { ITodoWebPartProps } from '../../ITodoWebPartProps';
   }
 })
 export default class Todo extends Vue implements ITodoWebPartProps {
-  @Prop
+  @Prop()
   public message: string;
-  @Prop
+  @Prop()
   public todos: string[];
 
   public mytodos: string[] = this.todos;
@@ -47,7 +47,7 @@ export default class Todo extends Vue implements ITodoWebPartProps {
   }
 }
 </script>
-<style scoped lang="sass">
+<style scoped lang="scss">
 h1 {
     text-align: center;
     margin: 0;
